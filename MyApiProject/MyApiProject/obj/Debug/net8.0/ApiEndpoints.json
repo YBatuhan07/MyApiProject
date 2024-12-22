@@ -1,0 +1,50 @@
+[
+  {
+    "ContainingType": "MyApiProject.Controllers.CityController",
+    "Method": "AddCity",
+    "RelativePath": "api/City/AddCity",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "MyApiProject.DomainLayer.City",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MyApiProject.Controllers.PersonnelController",
+    "Method": "AddPersonnel",
+    "RelativePath": "api/Personnel",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "MyApiProject.ViewModel.AddPersonnelModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MyApiProject.Controllers.PersonnelController",
+    "Method": "UpdatePersonnel",
+    "RelativePath": "api/Personnel/UpdatePersonnel",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "MyApiProject.ViewModel.AddPersonnelModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

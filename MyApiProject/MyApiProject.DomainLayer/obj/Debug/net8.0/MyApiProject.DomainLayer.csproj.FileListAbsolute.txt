@@ -1,0 +1,11 @@
+C:\Users\bkesk\Desktop\Proje Dosyalarım\Devam Eden Projeler\Restful API N-Tier\MyApiProject\MyApiProject.DomainLayer\bin\Debug\net8.0\MyApiProject.DomainLayer.deps.json
+C:\Users\bkesk\Desktop\Proje Dosyalarım\Devam Eden Projeler\Restful API N-Tier\MyApiProject\MyApiProject.DomainLayer\bin\Debug\net8.0\MyApiProject.DomainLayer.dll
+C:\Users\bkesk\Desktop\Proje Dosyalarım\Devam Eden Projeler\Restful API N-Tier\MyApiProject\MyApiProject.DomainLayer\bin\Debug\net8.0\MyApiProject.DomainLayer.pdb
+C:\Users\bkesk\Desktop\Proje Dosyalarım\Devam Eden Projeler\Restful API N-Tier\MyApiProject\MyApiProject.DomainLayer\obj\Debug\net8.0\MyApiProject.DomainLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bkesk\Desktop\Proje Dosyalarım\Devam Eden Projeler\Restful API N-Tier\MyApiProject\MyApiProject.DomainLayer\obj\Debug\net8.0\MyApiProject.DomainLayer.AssemblyInfoInputs.cache
+C:\Users\bkesk\Desktop\Proje Dosyalarım\Devam Eden Projeler\Restful API N-Tier\MyApiProject\MyApiProject.DomainLayer\obj\Debug\net8.0\MyApiProject.DomainLayer.AssemblyInfo.cs
+C:\Users\bkesk\Desktop\Proje Dosyalarım\Devam Eden Projeler\Restful API N-Tier\MyApiProject\MyApiProject.DomainLayer\obj\Debug\net8.0\MyApiProject.DomainLayer.csproj.CoreCompileInputs.cache
+C:\Users\bkesk\Desktop\Proje Dosyalarım\Devam Eden Projeler\Restful API N-Tier\MyApiProject\MyApiProject.DomainLayer\obj\Debug\net8.0\MyApiProject.DomainLayer.dll
+C:\Users\bkesk\Desktop\Proje Dosyalarım\Devam Eden Projeler\Restful API N-Tier\MyApiProject\MyApiProject.DomainLayer\obj\Debug\net8.0\refint\MyApiProject.DomainLayer.dll
+C:\Users\bkesk\Desktop\Proje Dosyalarım\Devam Eden Projeler\Restful API N-Tier\MyApiProject\MyApiProject.DomainLayer\obj\Debug\net8.0\MyApiProject.DomainLayer.pdb
+C:\Users\bkesk\Desktop\Proje Dosyalarım\Devam Eden Projeler\Restful API N-Tier\MyApiProject\MyApiProject.DomainLayer\obj\Debug\net8.0\ref\MyApiProject.DomainLayer.dll

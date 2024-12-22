@@ -1,0 +1,15 @@
+C:\Users\bkesk\Desktop\Proje Dosyalarım\Devam Eden Projeler\Restful API N-Tier\MyApiProject\MyApiProject.ViewModel\bin\Debug\net8.0\MyApiProject.ViewModel.deps.json
+C:\Users\bkesk\Desktop\Proje Dosyalarım\Devam Eden Projeler\Restful API N-Tier\MyApiProject\MyApiProject.ViewModel\bin\Debug\net8.0\MyApiProject.ViewModel.dll
+C:\Users\bkesk\Desktop\Proje Dosyalarım\Devam Eden Projeler\Restful API N-Tier\MyApiProject\MyApiProject.ViewModel\bin\Debug\net8.0\MyApiProject.ViewModel.pdb
+C:\Users\bkesk\Desktop\Proje Dosyalarım\Devam Eden Projeler\Restful API N-Tier\MyApiProject\MyApiProject.ViewModel\bin\Debug\net8.0\MyApiProject.DomainLayer.dll
+C:\Users\bkesk\Desktop\Proje Dosyalarım\Devam Eden Projeler\Restful API N-Tier\MyApiProject\MyApiProject.ViewModel\bin\Debug\net8.0\MyApiProject.DomainLayer.pdb
+C:\Users\bkesk\Desktop\Proje Dosyalarım\Devam Eden Projeler\Restful API N-Tier\MyApiProject\MyApiProject.ViewModel\obj\Debug\net8.0\MyApiProject.ViewModel.csproj.AssemblyReference.cache
+C:\Users\bkesk\Desktop\Proje Dosyalarım\Devam Eden Projeler\Restful API N-Tier\MyApiProject\MyApiProject.ViewModel\obj\Debug\net8.0\MyApiProject.ViewModel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bkesk\Desktop\Proje Dosyalarım\Devam Eden Projeler\Restful API N-Tier\MyApiProject\MyApiProject.ViewModel\obj\Debug\net8.0\MyApiProject.ViewModel.AssemblyInfoInputs.cache
+C:\Users\bkesk\Desktop\Proje Dosyalarım\Devam Eden Projeler\Restful API N-Tier\MyApiProject\MyApiProject.ViewModel\obj\Debug\net8.0\MyApiProject.ViewModel.AssemblyInfo.cs
+C:\Users\bkesk\Desktop\Proje Dosyalarım\Devam Eden Projeler\Restful API N-Tier\MyApiProject\MyApiProject.ViewModel\obj\Debug\net8.0\MyApiProject.ViewModel.csproj.CoreCompileInputs.cache
+C:\Users\bkesk\Desktop\Proje Dosyalarım\Devam Eden Projeler\Restful API N-Tier\MyApiProject\MyApiProject.ViewModel\obj\Debug\net8.0\MyApiPro.CE3C9904.Up2Date
+C:\Users\bkesk\Desktop\Proje Dosyalarım\Devam Eden Projeler\Restful API N-Tier\MyApiProject\MyApiProject.ViewModel\obj\Debug\net8.0\MyApiProject.ViewModel.dll
+C:\Users\bkesk\Desktop\Proje Dosyalarım\Devam Eden Projeler\Restful API N-Tier\MyApiProject\MyApiProject.ViewModel\obj\Debug\net8.0\refint\MyApiProject.ViewModel.dll
+C:\Users\bkesk\Desktop\Proje Dosyalarım\Devam Eden Projeler\Restful API N-Tier\MyApiProject\MyApiProject.ViewModel\obj\Debug\net8.0\MyApiProject.ViewModel.pdb
+C:\Users\bkesk\Desktop\Proje Dosyalarım\Devam Eden Projeler\Restful API N-Tier\MyApiProject\MyApiProject.ViewModel\obj\Debug\net8.0\ref\MyApiProject.ViewModel.dll

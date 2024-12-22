@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "MyApiProject.ViewModel/1.0.0": {
+        "dependencies": {
+          "MyApiProject.DomainLayer": "1.0.0"
+        },
+        "runtime": {
+          "MyApiProject.ViewModel.dll": {}
+        }
+      },
+      "MyApiProject.DomainLayer/1.0.0": {
+        "runtime": {
+          "MyApiProject.DomainLayer.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MyApiProject.ViewModel/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MyApiProject.DomainLayer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
