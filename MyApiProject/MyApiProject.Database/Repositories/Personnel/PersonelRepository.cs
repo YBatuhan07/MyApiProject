@@ -1,6 +1,8 @@
-﻿using MyApiProject.Database.Context;
+﻿using Microsoft.EntityFrameworkCore;
+using MyApiProject.Database.Context;
 using MyApiProject.DomainLayer;
 using MyApiProject.ViewModel;
+using System.Linq.Expressions;
 
 namespace MyApiProject.Database.Repositories;
 
@@ -21,13 +23,20 @@ public class PersonelRepository : IPersonelRepository
     }
     public async Task<Personnel> GetAsync(int id)
     {
-        var result = _context.Set<Personnel>().FirstOrDefault(x => x.Id == id);
+        var result = await _context.Set<Personnel>().FirstOrDefaultAsync(x => x.Id == id);
         return result;
     }
-    public  Personnel Update(Personnel model)
+    public Personnel Update(Personnel model)
     {
         var result = _context.Set<Personnel>().Update(model);
 
         return result.Entity;
+    }
+    public IQueryable<Personnel> GetPersonnelQueryable(Expression<Func<Personnel, bool>>? expression= null)
+    {
+        var query = _context.Set<Personnel>();
+        if(expression != null)
+            return query.Where(expression);
+        return query;
     }
 }

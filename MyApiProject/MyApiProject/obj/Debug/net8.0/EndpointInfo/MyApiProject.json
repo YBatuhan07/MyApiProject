@@ -65,6 +65,36 @@
             "description": "OK"
           }
         }
+      },
+      "delete": {
+        "tags": [
+          "Personnel"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Personnel"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     },
     "/api/Personnel/UpdatePersonnel": {
@@ -97,10 +127,70 @@
           }
         }
       }
+    },
+    "/api/Personnel/UpdateName": {
+      "put": {
+        "tags": [
+          "Personnel"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddPersonnelInfoModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddPersonnelInfoModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddPersonnelInfoModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
+      "AddPersonnelInfoModel": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fullName": {
+            "type": "string",
+            "nullable": true
+          },
+          "birthDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "gender": {
+            "$ref": "#/components/schemas/GenderType"
+          },
+          "cityName": {
+            "type": "string",
+            "nullable": true
+          },
+          "districtName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "AddPersonnelModel": {
         "type": "object",
         "properties": {
@@ -112,7 +202,7 @@
             "type": "string",
             "nullable": true
           },
-          "birtDate": {
+          "birthDate": {
             "type": "string",
             "format": "date-time"
           },
@@ -211,7 +301,7 @@
             "type": "string",
             "nullable": true
           },
-          "birtDate": {
+          "birthDate": {
             "type": "string",
             "format": "date-time"
           },

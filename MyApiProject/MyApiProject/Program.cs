@@ -3,7 +3,6 @@ using MyApiProject.ApplicationLayer;
 using MyApiProject.ApplicationLayer.Personnels;
 using MyApiProject.Database.Context;
 using MyApiProject.Database.Repositories;
-using MyApiProject.Database.Repositories.District;
 using MyApiProject.Database.UnitOfWork;
 
 namespace MyApiProject;
@@ -20,10 +19,13 @@ public class Program
         builder.Services.AddDbContext<MyDbContext>(options => options.UseSqlServer("server=(localdb)\\MSSQLLocalDB;database=MyApiProjectDb"));
         builder.Services.AddScoped<ICityService, CityService>();
         builder.Services.AddScoped<ICityRepository, CityRepository>();
+
         builder.Services.AddScoped<IDistrictService, DistrictService>();
         builder.Services.AddScoped<IDistrictRepository, DistrictRepository>();
-        builder.Services.AddScoped<IPersonelRepository, PersonelRepository>();
+
         builder.Services.AddScoped<IPersonnelService, PersonnelService>();
+        builder.Services.AddScoped<IPersonelRepository, PersonelRepository>();
+
         builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();

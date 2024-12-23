@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.EntityFrameworkCore;
 using MyApiProject.Database.Context;
 using MyApiProject.DomainLayer;
 
@@ -17,5 +18,13 @@ public class CityRepository : ICityRepository
     {
         await _context.Set<City>().AddAsync(city);
         await _context.SaveChangesAsync();
+    }
+
+    public async Task<City> GetCityByName(string cityName)
+    {
+        var result = await _context.Set<City>().Where(i =>
+        i.Name == cityName).FirstOrDefaultAsync();
+
+        return result;
     }
 }

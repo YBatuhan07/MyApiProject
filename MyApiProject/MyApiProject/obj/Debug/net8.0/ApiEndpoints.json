@@ -33,6 +33,48 @@
   },
   {
     "ContainingType": "MyApiProject.Controllers.PersonnelController",
+    "Method": "DeletePersonel",
+    "RelativePath": "api/Personnel",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MyApiProject.Controllers.PersonnelController",
+    "Method": "GetPersonnel",
+    "RelativePath": "api/Personnel",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MyApiProject.Controllers.PersonnelController",
+    "Method": "AddPersonnelName",
+    "RelativePath": "api/Personnel/UpdateName",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "MyApiProject.ViewModel.AddPersonnelInfoModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MyApiProject.Controllers.PersonnelController",
     "Method": "UpdatePersonnel",
     "RelativePath": "api/Personnel/UpdatePersonnel",
     "HttpMethod": "PUT",
