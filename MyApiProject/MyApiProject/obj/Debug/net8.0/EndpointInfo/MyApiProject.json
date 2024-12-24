@@ -36,6 +36,30 @@
         }
       }
     },
+    "/api/District/GetDistrictsPersonnel": {
+      "get": {
+        "tags": [
+          "District"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/District/GetDistrictsGroup": {
+      "get": {
+        "tags": [
+          "District"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Personnel": {
       "post": {
         "tags": [
@@ -79,16 +103,6 @@
               "format": "int32"
             }
           }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "get": {
-        "tags": [
-          "Personnel"
         ],
         "responses": {
           "200": {
@@ -152,6 +166,82 @@
             }
           }
         },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Personnel/GetPersonnel": {
+      "post": {
+        "tags": [
+          "Personnel"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PersonelFilterModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PersonelFilterModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PersonelFilterModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Personnel/GetPersonnelWithDistrictList": {
+      "get": {
+        "tags": [
+          "Personnel"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Personnel/GetPersonnelDistinct": {
+      "get": {
+        "tags": [
+          "Personnel"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Personnel/GetPersonnelSingleOrFirst": {
+      "get": {
+        "tags": [
+          "Personnel"
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -286,6 +376,43 @@
         ],
         "type": "integer",
         "format": "int32"
+      },
+      "PersonelFilterModel": {
+        "type": "object",
+        "properties": {
+          "searchName": {
+            "type": "string",
+            "nullable": true
+          },
+          "birthyear": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "gender": {
+            "$ref": "#/components/schemas/GenderType"
+          },
+          "cityName": {
+            "type": "string",
+            "nullable": true
+          },
+          "districtNames": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "index": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pageCount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
       },
       "Personnel": {
         "type": "object",

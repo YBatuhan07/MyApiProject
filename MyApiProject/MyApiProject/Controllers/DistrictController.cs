@@ -7,26 +7,20 @@ namespace MyApiProject.Controllers;
 [ApiController]
 public class DistrictController : ControllerBase
 {
-    //private readonly IDistrictService _districtService;
+    private readonly IDistrictService _districtService;
 
-    //public DistrictController(IDistrictService districtService)
-    //{
-    //    _districtService = districtService;
-    //}
-
-    //[HttpGet("GetDistrict")]
-    //public IActionResult GetDistrictById(string cityCode)
-    //{
-    //    var result = _districtService.GetDistrictByCityCode(cityCode);
-
-    //    return Ok(result);
-    //}
-
-    //[HttpGet("GetAllDistrict")]
-    //public IActionResult GetAllDistricts()
-    //{
-    //    var result = _districtService.GetAllDistricts();
-
-    //    return Ok(result);
-    //}
+    public DistrictController(IDistrictService districtService)
+    {
+        _districtService = districtService;
+    }
+    [HttpGet("GetDistrictsPersonnel")]
+    public async Task<IActionResult> GetDistrictsPersonnel()
+    {
+        return Ok(await _districtService.GetAllDistrictWithPersonnel());
+    }
+    [HttpGet("GetDistrictsGroup")]
+    public async Task<IActionResult> GetDistrictsGroup()
+    {
+        return Ok(await _districtService.GetDistrictGroups());
+    }
 }

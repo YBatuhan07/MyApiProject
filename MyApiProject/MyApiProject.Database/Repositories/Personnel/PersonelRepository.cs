@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MyApiProject.Database.Context;
 using MyApiProject.DomainLayer;
-using MyApiProject.ViewModel;
 using System.Linq.Expressions;
 
 namespace MyApiProject.Database.Repositories;

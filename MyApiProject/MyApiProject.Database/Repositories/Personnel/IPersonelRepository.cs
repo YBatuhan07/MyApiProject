@@ -1,5 +1,4 @@
 ﻿using MyApiProject.DomainLayer;
-using MyApiProject.ViewModel;
 using System.Linq.Expressions;
 
 namespace MyApiProject.Database.Repositories;

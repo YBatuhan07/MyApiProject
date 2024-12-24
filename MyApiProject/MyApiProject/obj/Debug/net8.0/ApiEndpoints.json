@@ -16,6 +16,26 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "MyApiProject.Controllers.DistrictController",
+    "Method": "GetDistrictsGroup",
+    "RelativePath": "api/District/GetDistrictsGroup",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MyApiProject.Controllers.DistrictController",
+    "Method": "GetDistrictsPersonnel",
+    "RelativePath": "api/District/GetDistrictsPersonnel",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MyApiProject.Controllers.PersonnelController",
     "Method": "AddPersonnel",
     "RelativePath": "api/Personnel",
@@ -50,7 +70,49 @@
   {
     "ContainingType": "MyApiProject.Controllers.PersonnelController",
     "Method": "GetPersonnel",
-    "RelativePath": "api/Personnel",
+    "RelativePath": "api/Personnel/GetPersonnel",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "MyApiProject.ViewModel.PersonelFilterModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MyApiProject.Controllers.PersonnelController",
+    "Method": "GetPersonnelDistinct",
+    "RelativePath": "api/Personnel/GetPersonnelDistinct",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MyApiProject.Controllers.PersonnelController",
+    "Method": "GetPersonnelSingleOrFirst",
+    "RelativePath": "api/Personnel/GetPersonnelSingleOrFirst",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MyApiProject.Controllers.PersonnelController",
+    "Method": "GetPersonnelWithDistrictList",
+    "RelativePath": "api/Personnel/GetPersonnelWithDistrictList",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

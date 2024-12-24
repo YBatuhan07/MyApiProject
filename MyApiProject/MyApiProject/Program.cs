@@ -4,6 +4,8 @@ using MyApiProject.ApplicationLayer.Personnels;
 using MyApiProject.Database.Context;
 using MyApiProject.Database.Repositories;
 using MyApiProject.Database.UnitOfWork;
+using MyApiProject.MiddleWare;
+using Serilog;
 
 namespace MyApiProject;
 
@@ -12,6 +14,8 @@ public class Program
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
+
+        Log.Logger = new LoggerConfiguration().WriteTo.Console().WriteTo.File("Logs/log.txt",rollingInterval:RollingInterval.Day).CreateLogger();
 
         // Add services to the container.
 
@@ -43,6 +47,7 @@ public class Program
         app.UseHttpsRedirection();
 
         app.UseAuthorization();
+        app.UseMiddleware<ErrorHandling>();
 
         app.MapControllers();
 
