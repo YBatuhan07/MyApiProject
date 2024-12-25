@@ -191,6 +191,7 @@ public class PersonnelService : IPersonnelService
         var query = await _unitOfWork.PersonelRepository.GetPersonnelQueryable().Select(s => s.FullName).Distinct().ToListAsync();
         return query;
     }
+
     public async Task<dynamic> GetPersonnel(string name)
     {
         var query = _unitOfWork.PersonelRepository.GetPersonnelQueryable();

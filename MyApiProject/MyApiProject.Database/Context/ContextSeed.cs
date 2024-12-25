@@ -1,10 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using MyApiProject.DomainLayer;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MyApiProject.Database.Context;
 
@@ -78,5 +75,33 @@ public static class ContextSeed
                 CityId = 07,
             }
             );
+    }
+    public static async Task CreateIdmAdminUser(IServiceProvider serviceProvider)
+    {
+        var userManager = serviceProvider.GetRequiredService<UserManager<IdentityUser>>();
+        var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+
+        string[] roles = { "Admin", "User" };
+        foreach ( var role in roles)
+        {
+            if(!await roleManager.RoleExistsAsync(role))
+            {
+                await roleManager.CreateAsync(new IdentityRole(role));
+            }
+        }
+        var adminUserName = "admin@example.com";
+        if (await userManager.FindByNameAsync(adminUserName) == null)
+        {
+            var adminUser = new IdentityUser
+            {
+                UserName = adminUserName,
+                Email = adminUserName,
+            };
+            var result = await userManager.CreateAsync(adminUser,"Admin123.");
+            if (result.Succeeded)
+            {
+                await userManager.AddToRoleAsync(adminUser, "Admin");
+            }
+        }
     }
 }

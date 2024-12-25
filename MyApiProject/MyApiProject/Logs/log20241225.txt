@@ -1,0 +1,1 @@
+2024-12-25 18:07:17.917 +03:00 [ERR] Unable to resolve service for type 'MyApiProject.ApplicationLayer.Auths.IAuthService' while attempting to activate 'MyApiProject.Controllers.AuthController'.

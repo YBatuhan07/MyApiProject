@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MyApiProject.ApplicationLayer.Personnels;
 using MyApiProject.ViewModel;
 
@@ -15,10 +16,25 @@ public class PersonnelController : ControllerBase
         _personnelService = personnelService;
     }
 
-    [HttpPost]
+    [HttpPost("ListPersonnel")]
+    [Authorize(Roles ="User")]
+    public async Task<IActionResult> GetPersonnel(PersonelFilterModel model)
+    {
+        var result = await _personnelService.GetPersonelList(model);
+
+        return Ok(result);
+    }
+    [HttpPost("AddNewPersonnel")]
+    [Authorize(Roles ="Admin")]
     public async Task<IActionResult> AddPersonnel(AddPersonnelModel model)
     {
         var result = await _personnelService.AddAsync(model);
+        return Ok(result);
+    }
+    [HttpPost("AddNewPersonnelAndCityAndDistrict")]
+    public async Task<IActionResult> AddPersonnelName(AddPersonnelInfoModel model)
+    {
+        var result = await _personnelService.AddPersonnelAsync(model);
         return Ok(result);
     }
     [HttpPut("UpdatePersonnel")]
@@ -27,26 +43,14 @@ public class PersonnelController : ControllerBase
         var result = await _personnelService.UpdateAsync(model);
         return Ok(result);
     }
-    [HttpDelete]
+    [HttpDelete("DeletePersonnel")]
     public async Task<IActionResult> DeletePersonel(int id)
     {
         var result = await _personnelService.DeleteAsync(id);
         return Ok(result);
     }
-    [HttpPut("UpdateName")]
-    public async Task<IActionResult> AddPersonnelName(AddPersonnelInfoModel model)
-    {
-        var result = await _personnelService.AddPersonnelAsync(model);
-        return Ok(result);
-    }
-    [HttpPost("GetPersonnel")]
-    public async Task<IActionResult> GetPersonnel(PersonelFilterModel model)
-    {
-        var result = await _personnelService.GetPersonelList(model);
-
-        return Ok(result);
-    }
-    [HttpGet("GetPersonnelWithDistrictList")]
+    
+    [HttpGet("list-with-districts")]
     public async Task<IActionResult> GetPersonnelWithDistrictList()
     {
         var result = await _personnelService.GetPersonnelDistrictJoin();
@@ -54,6 +58,7 @@ public class PersonnelController : ControllerBase
         return Ok(result);
     }
     [HttpGet("GetPersonnelDistinct")]
+    [Authorize]
     public async Task<IActionResult> GetPersonnelDistinct()
     {
         var result = await _personnelService.GetPersonnelDistinct();
