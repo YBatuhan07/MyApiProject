@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MyApiProject.Database.Context;
 using MyApiProject.DomainLayer;
-using System.Linq.Expressions;
+using MyApiProject.ViewModel;
 
 namespace MyApiProject.Database.Repositories;
 
@@ -30,12 +30,5 @@ public class PersonelRepository : IPersonelRepository
         var result = _context.Set<Personnel>().Update(model);
 
         return result.Entity;
-    }
-    public IQueryable<Personnel> GetPersonnelQueryable(Expression<Func<Personnel, bool>>? expression= null)
-    {
-        var query = _context.Set<Personnel>();
-        if(expression != null)
-            return query.Where(expression);
-        return query;
     }
 }

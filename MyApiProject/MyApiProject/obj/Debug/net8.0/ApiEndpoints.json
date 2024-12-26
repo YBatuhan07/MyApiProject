@@ -1,21 +1,5 @@
 [
   {
-    "ContainingType": "MyApiProject.Controllers.AuthController",
-    "Method": "Auth",
-    "RelativePath": "api/Auth",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "model",
-        "Type": "MyApiProject.ViewModel.LoginRequest",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "MyApiProject.Controllers.CityController",
     "Method": "AddCity",
     "RelativePath": "api/City/AddCity",
@@ -32,29 +16,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "MyApiProject.Controllers.DistrictController",
-    "Method": "GetDistrictsGroup",
-    "RelativePath": "api/District/GetDistrictsGroup",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "MyApiProject.Controllers.DistrictController",
-    "Method": "GetDistrictsPersonnel",
-    "RelativePath": "api/District/GetDistrictsPersonnel",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "MyApiProject.Controllers.PersonnelController",
     "Method": "AddPersonnel",
-    "RelativePath": "api/Personnel/AddNewPersonnel",
+    "RelativePath": "api/Personnel",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -69,24 +33,8 @@
   },
   {
     "ContainingType": "MyApiProject.Controllers.PersonnelController",
-    "Method": "AddPersonnelName",
-    "RelativePath": "api/Personnel/AddNewPersonnelAndCityAndDistrict",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "model",
-        "Type": "MyApiProject.ViewModel.AddPersonnelInfoModel",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "MyApiProject.Controllers.PersonnelController",
     "Method": "DeletePersonel",
-    "RelativePath": "api/Personnel/DeletePersonnel",
+    "RelativePath": "api/Personnel",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -101,51 +49,15 @@
   },
   {
     "ContainingType": "MyApiProject.Controllers.PersonnelController",
-    "Method": "GetPersonnelDistinct",
-    "RelativePath": "api/Personnel/GetPersonnelDistinct",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "MyApiProject.Controllers.PersonnelController",
-    "Method": "GetPersonnelSingleOrFirst",
-    "RelativePath": "api/Personnel/GetPersonnelSingleOrFirst",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "name",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "MyApiProject.Controllers.PersonnelController",
-    "Method": "GetPersonnelWithDistrictList",
-    "RelativePath": "api/Personnel/list-with-districts",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "MyApiProject.Controllers.PersonnelController",
-    "Method": "GetPersonnel",
-    "RelativePath": "api/Personnel/ListPersonnel",
-    "HttpMethod": "POST",
+    "Method": "AddPersonnelName",
+    "RelativePath": "api/Personnel/UpdateName",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "model",
-        "Type": "MyApiProject.ViewModel.PersonelFilterModel",
+        "Type": "MyApiProject.ViewModel.AddPersonnelInfoModel",
         "IsRequired": true
       }
     ],

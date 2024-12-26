@@ -9,7 +9,7 @@ namespace MyApiProject.ApplicationLayer
 {
     public interface IDistrictService
     {
-        Task<dynamic> GetAllDistrictWithPersonnel();
-        Task<dynamic> GetDistrictGroups();
+        //List<District> GetAllDistricts();
+        //List<District> GetDistrictByCityCode(string cityCode);
     }
 }

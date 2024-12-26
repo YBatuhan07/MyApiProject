@@ -1,41 +1,10 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "Example APIs",
-    "version": "v1"
+    "title": "MyApiProject",
+    "version": "1.0"
   },
   "paths": {
-    "/api/Auth": {
-      "post": {
-        "tags": [
-          "Auth"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/LoginRequest"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/LoginRequest"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/LoginRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/api/City/AddCity": {
       "post": {
         "tags": [
@@ -67,62 +36,7 @@
         }
       }
     },
-    "/api/District/GetDistrictsPersonnel": {
-      "get": {
-        "tags": [
-          "District"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/District/GetDistrictsGroup": {
-      "get": {
-        "tags": [
-          "District"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Personnel/ListPersonnel": {
-      "post": {
-        "tags": [
-          "Personnel"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PersonelFilterModel"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PersonelFilterModel"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/PersonelFilterModel"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Personnel/AddNewPersonnel": {
+    "/api/Personnel": {
       "post": {
         "tags": [
           "Personnel"
@@ -151,32 +65,21 @@
             "description": "OK"
           }
         }
-      }
-    },
-    "/api/Personnel/AddNewPersonnelAndCityAndDistrict": {
-      "post": {
+      },
+      "delete": {
         "tags": [
           "Personnel"
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AddPersonnelInfoModel"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AddPersonnelInfoModel"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/AddPersonnelInfoModel"
-              }
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
             }
           }
-        },
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -215,66 +118,30 @@
         }
       }
     },
-    "/api/Personnel/DeletePersonnel": {
-      "delete": {
+    "/api/Personnel/UpdateName": {
+      "put": {
         "tags": [
           "Personnel"
         ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddPersonnelInfoModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddPersonnelInfoModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddPersonnelInfoModel"
+              }
             }
           }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Personnel/list-with-districts": {
-      "get": {
-        "tags": [
-          "Personnel"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Personnel/GetPersonnelDistinct": {
-      "get": {
-        "tags": [
-          "Personnel"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Personnel/GetPersonnelSingleOrFirst": {
-      "get": {
-        "tags": [
-          "Personnel"
-        ],
-        "parameters": [
-          {
-            "name": "name",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -410,57 +277,6 @@
         "type": "integer",
         "format": "int32"
       },
-      "LoginRequest": {
-        "type": "object",
-        "properties": {
-          "userName": {
-            "type": "string",
-            "nullable": true
-          },
-          "password": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "PersonelFilterModel": {
-        "type": "object",
-        "properties": {
-          "searchName": {
-            "type": "string",
-            "nullable": true
-          },
-          "birthyear": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "gender": {
-            "$ref": "#/components/schemas/GenderType"
-          },
-          "cityName": {
-            "type": "string",
-            "nullable": true
-          },
-          "districtNames": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "nullable": true
-          },
-          "index": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "pageCount": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
       "Personnel": {
         "type": "object",
         "properties": {
@@ -492,19 +308,6 @@
         },
         "additionalProperties": false
       }
-    },
-    "securitySchemes": {
-      "Bearer": {
-        "type": "apiKey",
-        "description": "Jwt token gerekli: Bearer {token}",
-        "name": "Authorization",
-        "in": "header"
-      }
     }
-  },
-  "security": [
-    {
-      "Bearer": [ ]
-    }
-  ]
+  }
 }
