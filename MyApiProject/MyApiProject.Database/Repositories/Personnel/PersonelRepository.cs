@@ -1,34 +1,29 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MyApiProject.Database.Context;
 using MyApiProject.DomainLayer;
-using MyApiProject.ViewModel;
+using System.Linq.Expressions;
 
 namespace MyApiProject.Database.Repositories;
 
-public class PersonelRepository : IPersonelRepository
+public class PersonelRepository : BaseRepository<Personnel>, IPersonelRepository
 {
-    private readonly MyDbContext _context;
-
-    public PersonelRepository(MyDbContext context)
+    public PersonelRepository(MyDbContext context) : base(context)
     {
-        _context = context;
     }
 
     public async Task<Personnel> AddAsync(Personnel personnel)
     {
-        var result = await _context.Set<Personnel>().AddAsync(personnel);
+        await AddAsync(personnel);
 
-        return result.Entity;
+        return personnel;
     }
-    public async Task<Personnel> GetAsync(int id)
+    public async Task<Personnel> Update(Personnel model)
     {
-        var result = await _context.Set<Personnel>().FirstOrDefaultAsync(x => x.Id == id);
-        return result;
+        await UpdateAsyn(model);
+        return model;
     }
-    public Personnel Update(Personnel model)
+    public IQueryable<Personnel> GetPersonnelQueryable(Expression<Func<Personnel, bool>>? expression = null)
     {
-        var result = _context.Set<Personnel>().Update(model);
-
-        return result.Entity;
+        return expression == null ? Queryabla() : Queryabla(expression);
     }
 }

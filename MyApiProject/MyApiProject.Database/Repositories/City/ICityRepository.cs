@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace MyApiProject.Database.Repositories
 {
-    public interface ICityRepository
+    public interface ICityRepository : IBaseRepository<City>
     {
-        Task AddAsync(City city);
         Task<City> GetCityByName(string cityName);
     }
 }

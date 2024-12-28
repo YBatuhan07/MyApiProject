@@ -1,11 +1,11 @@
 ﻿using MyApiProject.DomainLayer;
-using MyApiProject.ViewModel;
+using System.Linq.Expressions;
 
 namespace MyApiProject.Database.Repositories;
 
-public interface IPersonelRepository
+public interface IPersonelRepository : IBaseRepository<Personnel>
 {
     Task<Personnel> AddAsync(Personnel personnel);
-    Task<Personnel> GetAsync(int id);
-    Personnel Update(Personnel model);
+    Task<Personnel> Update(Personnel model);
+    IQueryable<Personnel> GetPersonnelQueryable(Expression<Func<Personnel, bool>>? expression = null);
 }

@@ -1,19 +1,21 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace MyApiProject.Database.Context
 {
-    public class MyDbContext : Microsoft.EntityFrameworkCore.DbContext
+    public class MyDbContext : IdentityDbContext<IdentityUser,IdentityRole,string>
     {
-        public MyDbContext(DbContextOptions options) : base(options)
+        public MyDbContext(DbContextOptions<MyDbContext> options) : base(options)
         {
 
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder) => modelBuilder.ApplyConfigurationsFromAssembly(typeof(MyDbContext).Assembly).Seed();
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(MyDbContext).Assembly);
+            modelBuilder.Seed();
+        }
     }
 }

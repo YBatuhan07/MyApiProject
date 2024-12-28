@@ -1,0 +1,2 @@
+2024-12-26 17:58:54.987 +03:00 [ERR] The CustomValidationAttribute method 'GenderType' does not exist in type 'AddPersonnelInfoModel' or is not public and static.
+2024-12-26 17:59:02.951 +03:00 [ERR] The CustomValidationAttribute method 'GenderType' does not exist in type 'AddPersonnelInfoModel' or is not public and static.

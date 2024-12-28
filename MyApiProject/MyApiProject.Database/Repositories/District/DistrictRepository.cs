@@ -4,26 +4,18 @@ using MyApiProject.DomainLayer;
 
 namespace MyApiProject.Database.Repositories;
 
-public class DistrictRepository : IDistrictRepository
+public class DistrictRepository : BaseRepository<District> , IDistrictRepository
 {
-    private readonly MyDbContext _context;
 
-    public DistrictRepository(MyDbContext context)
+    public DistrictRepository(MyDbContext context) : base(context)
     {
-        _context = context;
     }
 
     public async Task<District> GetDistrictByCityAndName(string cityName, string districtName)
     {
-        var result = await _context.Set<District>().Where(i => 
+        var result = await Queryabla(i =>
         i.City.Name == cityName && i.Name == districtName).FirstOrDefaultAsync();
 
         return result;
-    }
-
-    public async Task AddAsync(District district)
-    {
-        await _context.Set<District>().AddAsync(district);
-        await _context.SaveChangesAsync();
     }
 }

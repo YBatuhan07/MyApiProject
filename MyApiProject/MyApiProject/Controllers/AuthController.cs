@@ -18,6 +18,11 @@ public class AuthController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Auth(LoginRequest model)
     {
+
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
         return Ok(await _authService.AuthenticateAsync(model));
     }
 }

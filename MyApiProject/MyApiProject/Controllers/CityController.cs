@@ -18,6 +18,11 @@ public class CityController : ControllerBase
     [HttpPost("AddCity")]
     public async Task<IActionResult> AddCity(City model)
     {
+
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
         await _cityService.AddCity(model);
 
         return Ok();

@@ -2,7 +2,7 @@
 
 namespace MyApiProject.DomainLayer;
 
-public class City
+public class City : BaseClass
 {
     public int Id { get; set; }
     public string Name { get; set; }
